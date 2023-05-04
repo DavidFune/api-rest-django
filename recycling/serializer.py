@@ -15,3 +15,9 @@ class RecycleSerializer(serializers.ModelSerializer):
     class Meta:
         model = Recycle
         fields = '__all__'
+
+class ListProductsByCategotySerializer(serializers.ModelSerializer):
+    product_name = serializers.ReadOnlyField(source='product.name')
+    class Meta:
+        model = Recycle
+        fields = ['product_name']
